@@ -1,16 +1,10 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+class Home extends MY_Controller {
  public function __construct()
  {
   parent::__construct();
-  if(!$this->session->userdata('id'))
-  {
-   redirect('admin/login');
-  }
-  $this->load->library('form_validation');
-  $this->load->library('encrypt');
   $this->load->model('brand_model');
   $this->load->library('pagination');
   $this->config->load('configPaging');

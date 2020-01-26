@@ -1,17 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Product extends CI_Controller {
+class Product extends MY_Controller {
 
  public function __construct()
  {
   parent::__construct();
-  if(!$this->session->userdata('id'))
-  {
-   redirect('admin/login');
-  }
-  $this->load->library('form_validation');
-  $this->load->library('encrypt');
   $this->load->model('product_model');
   $this->load->model('brand_model');
   $this->load->model('category_model');
