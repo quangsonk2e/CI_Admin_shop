@@ -1,6 +1,5 @@
 <?php
-class Brand_model extends CI_Model
-{
+class Brand_model extends CI_Model{
   function getById($id){
     //$this->db->where('id',$id);
     $query=$this->db->get_where('brand', array('id' => $id));

@@ -56,7 +56,7 @@ function page($page=1)
  		  $data['template']='admin/brand/add';
       $data['title']='Thêm Nhóm hàng';
       $data['catalog']="Thêm Nhóm hàng";
-
+      
       $this->load->view('template_admin',$data); 
      
        
