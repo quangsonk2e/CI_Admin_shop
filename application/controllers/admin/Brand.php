@@ -27,6 +27,7 @@ class Brand extends MY_Controller {
  	$data['title']='Nhóm hàng';
  	$data['template']='admin/brand/index';
  	$data['catalog']="Nhóm hàng";
+
  	$data['brands']=$this->brand_model->getByPage(1);
   	$this->load->view('template_admin',$data);
  }
@@ -109,7 +110,7 @@ function page($page=1)
       $name=htmlentities($this->input->post('b_name'));
       $date=htmlentities($this->input->post('b_date'));
       $date=changedate($date);
-      $this->brand_model->update($id,$name,$date);
+     // $this->brand_model->update($id,$name,$date);
       $this->session->set_flashdata('message', 'Sửa thành công '.$name);
       redirect('admin/brand');
       }
@@ -119,7 +120,7 @@ function page($page=1)
     }
     function delete($id){
 
-      $this->brand_model->delete($id);
+    //  $this->brand_model->delete($id);
       $this->session->set_flashdata('message', 'Xoá thành công ');
       redirect('admin/brand');
       }

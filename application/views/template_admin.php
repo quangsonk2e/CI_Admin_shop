@@ -109,7 +109,10 @@
 		<!-- Theme Initialization Files -->
 		<script src="<?php echo base_url();?>assets/javascripts/theme.init.js"></script>
 
-
+		<script src="<?=base_url()?>public/ckeditor/ckeditor.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			 CKEDITOR.replace('ckeditor');
+		</script>
 		<!-- Examples -->
 		<!-- <script src="<?php echo base_url();?>assets/javascripts/dashboard/examples.dashboard.js"></script> -->
 	</body>

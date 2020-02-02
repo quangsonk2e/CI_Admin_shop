@@ -29,7 +29,7 @@
 									<tbody>
 										<?php 
 										$stt=1;
-										foreach ($brands->result() as $item) {
+										foreach ($brands as $item) {
 											
 										 ?>
 										<tr class="gradeX">
