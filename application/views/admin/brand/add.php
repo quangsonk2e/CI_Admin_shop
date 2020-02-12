@@ -8,7 +8,7 @@
 							</header>
 							<div class="panel-body">
 							<?php $this->load->view('include/admin/message');?>
-							<form class="form-horizontal form-bordered" method="post" id="form1" action="<?php echo base_url();?>admin/brand/add">
+							<form class="form-horizontal form-bordered" method="post"  action="<?=base_url();?>admin/brand/add">
 								<input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>" />
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="inputDefault">Tên nhóm</label>

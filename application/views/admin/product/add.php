@@ -32,7 +32,7 @@
 												<label class="col-md-3 control-label" for="brand">Thuộc nhóm</label>
 												<div class="col-md-6">
 													<select data-plugin-selectTwo class="form-control populate" name="brand">
-														<?php foreach ($brands->result() as $item) {
+														<?php foreach ($brands as $item) {
 															
 														?>
 														

@@ -62,7 +62,7 @@ function updateSizes(){
            // view uploaded file.
            
            $("#form1")[0].reset();
-          window.location.replace("http://code.com/admin/product");
+          window.location.replace("http://code.com.vn/admin/product");
 
           }
             },

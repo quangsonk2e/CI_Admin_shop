@@ -36,7 +36,7 @@
 											<td><?=$stt;?></td>
 											<td><a href="<?php echo base_url().'admin/brand/edit/'.$item->id;?>" style="text-decoration:none; "><?=$item->brand; ?></a></td>
 											<td><?php echo date('d/m/Y',strtotime($item->created));?></td>
-											<td class="text-center"><a href="<?php echo base_url().'admin/brand/edit/'.$item->id;?>"><i class="fa fa-edit"></i></a>-<a href="<?php echo base_url().'admin/brand/delete/'.$item->id;?>"><i class="glyphicon glyphicon-remove"></i></a></td>
+											<td class="text-center"><a href="<?php echo base_url().'admin/brand/edit/'.$item->id;?>"><i class="fa fa-edit"></i></a>-<a href="<?php echo base_url().'admin/brand/delete/'.$item->id;?>" onclick="return confirm('Bạn chắc chắn muốn xóa <?=$item->brand;?>')"><i class="glyphicon glyphicon-remove"></i></a></td>
 											<!-- <td class="center hidden-phone">4</td>
 											<td class="center hidden-phone">X</td> -->
 										</tr>

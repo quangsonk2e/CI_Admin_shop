@@ -54,10 +54,25 @@ function page($page=1)
  function add()
  {
   	
- 		  $data['template']='admin/brand/add';
-      $data['title']='Thêm Nhóm hàng';
-      $data['catalog']="Thêm Nhóm hàng";
-      
+   $data['template']='admin/brand/add';
+   $data['title']='Thêm Nhóm hàng';
+   $data['catalog']="Thêm Nhóm hàng";
+   $this->form_validation->set_rules('b_name','Tên nhóm','required',array('required' => 'Bắt buộc nhập tên nhóm'));
+   $this->form_validation->set_rules('b_date','Ngày tạo','required',array('required'=>'Bắt buộc nhập ngày tạo'));
+   if($this->form_validation->run()){
+      //Kết thúc kiểm tra tính hợp lệ
+    $name=htmlentities($this->input->post('b_name',TRUE),ENT_QUOTES);
+    $date=htmlentities($this->input->post('b_date',TRUE),ENT_QUOTES);
+    $date=changedate($date);
+    $array= array('brand' => $name, 'created'=>$date);
+      //  echo date('d/m/Y H:i:s',strtotime($date));
+   $this->brand_model->add($array);
+    $this->session->set_flashdata('message', 'Thêm nhóm hàng thành công '.$name);
+
+
+ //   redirect('admin/brand');
+    
+  }
       $this->load->view('template_admin',$data); 
      
        
@@ -65,29 +80,7 @@ function page($page=1)
   	
     }
 
-   function add_valid()
- {
   
-      // kiểm tra tính hợp lệ
-      $this->form_validation->set_rules('b_name','Tên nhóm','required',array('required' => 'Bắt buộc nhập tên nhóm'));
-      $this->form_validation->set_rules('b_date','Ngày tạo','required',array('required'=>'Bắt buộc nhập ngày tạo'));
-      if($this->form_validation->run()){
-      //Kết thúc kiểm tra tính hợp lệ
-        $name=htmlentities($this->input->post('b_name',TRUE),ENT_QUOTES);
-        $date=htmlentities($this->input->post('b_date',TRUE),ENT_QUOTES);
-        $date=changedate($date);
-      //  echo date('d/m/Y H:i:s',strtotime($date));
-       $this->brand_model->add($name,$date);
-        $this->session->set_flashdata('message', 'Thêm nhóm hàng thành công '.$name);
-       
-      
-      redirect('admin/brand');
-    
-  }
-  else{
-    $this->add();
-  }
-  }
 
   function edit($id=1){
     //$id=htmlentities($id);
@@ -95,32 +88,26 @@ function page($page=1)
     $data['title']='Sửa nhóm hàng';
     $data['template']='admin/brand/edit';
     $data['catalog']="Sửa nhóm hàng";
-    
+    $this->form_validation->set_rules('b_name','Tên nhóm','required',array('required' => 'Bắt buộc nhập tên nhóm'));
+      $this->form_validation->set_rules('b_date','Ngày tạo','required',array('required'=>'Bắt buộc nhập ngày tạo'));
+      if($this->form_validation->run()){
+      $name=htmlentities($this->input->post('b_name'));
+      $date=htmlentities($this->input->post('b_date'));
+      $date=changedate($date);
+      $array = array('brand' =>$name , 'created'=>$date );
+      $this->brand_model->update($id,$array);
+      $this->session->set_flashdata('message', 'Sửa thành công '.$name);
+      redirect('admin/brand');
+}
   //$data['total_rows']=$this->brand_model->getAll()->count_all_results();
     $this->load->view('template_admin',$data);
 
 
 
     }
-    function edit_valid($id=1){
-      echo $id;
-       $this->form_validation->set_rules('b_name','Tên nhóm','required',array('required' => 'Bắt buộc nhập tên nhóm'));
-      $this->form_validation->set_rules('b_date','Ngày tạo','required',array('required'=>'Bắt buộc nhập ngày tạo'));
-      if($this->form_validation->run()){
-      $name=htmlentities($this->input->post('b_name'));
-      $date=htmlentities($this->input->post('b_date'));
-      $date=changedate($date);
-     // $this->brand_model->update($id,$name,$date);
-      $this->session->set_flashdata('message', 'Sửa thành công '.$name);
-      redirect('admin/brand');
-      }
-      else
-        $this->edit($id);
-
-    }
     function delete($id){
 
-    //  $this->brand_model->delete($id);
+     $this->brand_model->delete($id);
       $this->session->set_flashdata('message', 'Xoá thành công ');
       redirect('admin/brand');
       }

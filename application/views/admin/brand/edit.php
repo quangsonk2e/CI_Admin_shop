@@ -9,7 +9,7 @@
 							<div class="panel-body">
 							<?php $this->load->view('include/admin/message');?>
 							<?php foreach ($item as $key) {?>
-							<form class="form-horizontal form-bordered" method="post" id="form1" action="<?php echo base_url();?>admin/brand/edit_valid/<?=$key->id; ?>">
+							<form class="form-horizontal form-bordered" method="post" id="form123" action="<?php echo base_url();?>admin/brand/edit/<?=$key->id; ?>">
 								<input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>" />
 								
 											<div class="form-group">
