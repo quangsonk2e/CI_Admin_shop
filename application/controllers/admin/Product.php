@@ -136,27 +136,22 @@ function page($page=1)
     $data['template']='admin/product/edit';
     $data['catalog']="Sửa sản phẩm";
     $data['brands']=$this->brand_model->getAll();
-      $data['categories']=$this->category_model->getAll();
+    $data['categories']=$this->category_model->getAll();
   //$data['total_rows']=$this->brand_model->getAll()->count_all_results();
     $this->load->view('template_admin',$data);
-
-
-
-    }
+}
     function edit_valid(){
       $id=htmlentities($this->input->post('id'));
-       $title= htmlentities($this->input->post('title'));
-     $brand=htmlentities($this->input->post('brand'));
+      $title= htmlentities($this->input->post('title'));
+      $brand=htmlentities($this->input->post('brand'));
       $categories=htmlentities($this->input->post('category'));
       $price=htmlentities($this->input->post('price'));
       $list_price=htmlentities($this->input->post('list_price'));
-       $sizes=htmlentities($this->input->post('sizes'));
+      $sizes=htmlentities($this->input->post('sizes'));
       $date=htmlentities($this->input->post('date'));
-       $description=htmlentities($this->input->post('description'));
-    
-       $this->session->set_flashdata('message', 'Thêm sản phẩm hàng thành công '.$title);
-    
-      //upload ảnh
+      $description=htmlentities($this->input->post('description'));
+      $this->session->set_flashdata('message', 'Thêm sản phẩm hàng thành công '.$title);
+          //upload ảnh
        $data="";
      // $data = array();
       // Count total files
