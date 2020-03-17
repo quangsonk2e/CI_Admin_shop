@@ -11,7 +11,7 @@ mb_language('uni');
 mb_regex_encoding('UTF-8');
 ob_start('mb_output_handler');
 date_default_timezone_set('Europe/Rome');
-setlocale(LC_CTYPE, 'en_US'); //correct transliteration
+setlocale(LC_CTYPE, 'vi_VN'); //correct transliteration
 
 /*
 |--------------------------------------------------------------------------
@@ -31,7 +31,7 @@ setlocale(LC_CTYPE, 'en_US'); //correct transliteration
 |
 */
 
-define('USE_ACCESS_KEYS', false); // TRUE or FALSE
+define('USE_ACCESS_KEYS', TRUE); // TRUE or FALSE
 
 /*
 |--------------------------------------------------------------------------
@@ -187,7 +187,7 @@ $config = array(
     |
     */
 
-    'access_keys' => array(),
+    'access_keys' => array('sonphuongviet'),
 
     //--------------------------------------------------------------------------------------------------------
     // YOU CAN COPY AND CHANGE THESE VARIABLES INTO FOLDERS config.php FILES TO CUSTOMIZE EACH FOLDER OPTIONS
