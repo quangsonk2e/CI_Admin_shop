@@ -109,9 +109,13 @@
 		<!-- Theme Initialization Files -->
 		<script src="<?php echo base_url();?>assets/javascripts/theme.init.js"></script>
 
-		<script src="<?=base_url()?>public/ckeditor/ckeditor.js" type="text/javascript"></script>
+		<script src="<?=base_url()?>assets/ckeditor/ckeditor.js" type="text/javascript"></script>
 		<script type="text/javascript">
-			 CKEDITOR.replace('ckeditor');
+			 CKEDITOR.replace('ckeditor', {
+			  filebrowserUploadUrl: "<?=base_url();?>upload/do_upload",
+			  filebrowserImageBrowseUrl :'<?= base_url()?>assets/ckeditor/plugins/imageuploader/imgbrowser.php?CKEditor=textarea&CKEditorFuncNum=1&langCode=en-gb'
+  
+ 			});
 		</script>
 		<!-- Examples -->
 		<!-- <script src="<?php echo base_url();?>assets/javascripts/dashboard/examples.dashboard.js"></script> -->

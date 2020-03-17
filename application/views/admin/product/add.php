@@ -46,7 +46,7 @@
 												<label class="col-md-3 control-label" for="inputDefault">Thuộc loại</label>
 												<div class="col-md-6">
 													<select data-plugin-selectTwo class="form-control populate" name="category">
-														<?php foreach ($categories->result() as $item) {
+														<?php foreach ($categories as $item) {
 															
 														?>
 														
@@ -128,8 +128,8 @@
 
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="description">Mô tả</label>
-												<div class="col-md-6">
-													<textarea class="col-md-12 form-control" name="description"></textarea>
+												<div class="col-md-9">
+													<textarea class="col-md-12 form-control" name="description" id="ckeditor"></textarea>
 													
 													
 												</div>
