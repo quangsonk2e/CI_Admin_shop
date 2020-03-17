@@ -37,7 +37,7 @@
 												<label class="col-md-3 control-label" for="brand">Thuộc nhóm</label>
 												<div class="col-md-6">
 													<select data-plugin-selectTwo class="form-control populate" name="brand">
-														<?php foreach ($brands->result() as $item) {
+														<?php foreach ($brands as $item) {
 															
 														?>
 														
@@ -45,13 +45,13 @@
 														<?php }?>
 													</select>
 												</div>
-												<span class="text-danger"><?php echo form_error('brand'); ?></span>
+											 <span class="text-danger"><?php echo form_error('brand'); ?></span>
 											</div>
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="inputDefault">Thuộc loại</label>
 												<div class="col-md-6">
 													<select data-plugin-selectTwo class="form-control populate" name="category">
-														<?php foreach ($categories->result() as $item) {
+														<?php foreach ($categories as $item) {
 															
 														?>
 														
