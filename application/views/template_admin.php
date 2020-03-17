@@ -108,13 +108,28 @@
 		
 		<!-- Theme Initialization Files -->
 		<script src="<?php echo base_url();?>assets/javascripts/theme.init.js"></script>
+		<script type="text/javascript">
 
+		</script>
 		<script src="<?=base_url()?>assets/ckeditor/ckeditor.js" type="text/javascript"></script>
 		<script type="text/javascript">
+
 			 CKEDITOR.replace('ckeditor', {
-			  filebrowserUploadUrl: "<?=base_url();?>upload/do_upload",
-			  filebrowserImageBrowseUrl :'<?= base_url()?>assets/ckeditor/plugins/imageuploader/imgbrowser.php?CKEditor=textarea&CKEditorFuncNum=1&langCode=en-gb'
-  
+			  // filebrowserUploadUrl: "<?=base_url();?>upload/do_upload",
+			 // Dùng cho ckfinder
+			 // filebrowserBrowseUrl : '<?php echo base_url()."assets/ckfinder/ckfinder.html"; ?>',
+			 // filebrowserImageBrowseUrl : '<?php echo base_url()."assets/ckfinder/ckfinder.html?Type=Images";?>',
+			 // filebrowserFlashBrowseUrl : '<?php echo base_url()."assets/ckfinder/ckfinder.html?Type=Flash" ?>',
+			 // filebrowserUploadUrl : '<?php echo base_url()."assets/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files"?>',
+			 // filebrowserImageUploadUrl : '<?php echo base_url()."assets/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images";?>',
+			 // filebrowserFlashUploadUrl : '<?php echo base_url()."assets/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash";?>',
+			 // filebrowserWindowWidth : '800',
+			 // filebrowserWindowHeight : '480'
+//Dùng cho https://www.responsivefilemanager.com/
+filebrowserBrowseUrl : '<?php echo base_url();?>assets/filemanager/dialog.php?type=2&editor=ckeditor&fldr=',
+filebrowserUploadUrl : '<?php echo base_url();?>assets/filemanager/dialog.php?type=2&editor=ckeditor&fldr=',
+filebrowserImageBrowseUrl : '<?php echo base_url();?>assets/filemanager/dialog.php?type=1&editor=ckeditor&fldr='
+  			
  			});
 		</script>
 		<!-- Examples -->

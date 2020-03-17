@@ -17,7 +17,10 @@ class Upload extends CI_Controller {
     $config['overwrite'] = FALSE;
     $this->load->library('upload');
  
- 
+ $reponse = array(
+                'csrfName' => $this->security->get_csrf_token_name(),
+                'csrfHash' => $this->security->get_csrf_hash()
+                );
     $funcNum = $this->input->get('CKEditorFuncNum'); //$_GET['CKEditorFuncNum']
     $this->upload->initialize($config);
    
@@ -35,10 +38,11 @@ class Upload extends CI_Controller {
         //$url=base_url().''
  
         $message = 'Upload success!';
+        // echo json_decode($reponse);
 
     }
   //  echo "<script type='text/javascript'>window.parent.CKEDITOR.tools.callFunction($funcNum, '$url', '$message');</script>";
-    return "<script type='text/javascript'>window.parent.CKEDITOR.tools.callFunction($funcNum, '$upload_result', '$message');</script>";
+    echo "<script type='text/javascript'>window.parent.CKEDITOR.tools.callFunction($funcNum, '$upload_result', '$message');</script>";
   }
 }
 
