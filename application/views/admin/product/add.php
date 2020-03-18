@@ -19,7 +19,7 @@
 							</header>
 							<div class="panel-body">
 							<?php $this->load->view('include/admin/message');?>
-							<form class="form-horizontal form-bordered" method="post" id="form1"  enctype="multipart/form-data" action="<?php echo base_url();?>admin/product/add_valid">
+							<form class="form-horizontal form-bordered" method="post" id="form123"  enctype="multipart/form-data" action="<?php echo base_url();?>admin/product/add_valid">
 								<input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>" />
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="title">Tên sản phẩm</label>

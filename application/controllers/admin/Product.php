@@ -77,9 +77,9 @@ function page($page=1)
       $list_price=htmlentities($this->input->post('list_price'));
        $sizes=htmlentities($this->input->post('sizes'));
       $date=htmlentities($this->input->post('date'));
-       $description=htmlentities($this->input->post('description'));
+       $description=htmlentities($this->input->post('description',FALSE));
     
-       $this->session->set_flashdata('message', 'Thêm sản phẩm hàng thành công '.$title);
+      $this->session->set_flashdata('message', 'Thêm sản phẩm hàng thành công '.$title);
     
       //upload ảnh
        $data="";
@@ -123,8 +123,8 @@ function page($page=1)
 
     $this->product_model->add($title, $categories,$price,$list_price, $data,$brand, $description, 1,$sizes,1);
       
-    //$this->index();
-        echo site_url('admin/product');
+    $this->index();
+       echo site_url('admin/product');
   }
   function chuyen(){
     $this->index();
@@ -140,7 +140,7 @@ function page($page=1)
   //$data['total_rows']=$this->brand_model->getAll()->count_all_results();
     $this->load->view('template_admin',$data);
 }
-    function edit_valid(){
+  function edit_valid(){
       $id=htmlentities($this->input->post('id'));
       $title= htmlentities($this->input->post('title'));
       $brand=htmlentities($this->input->post('brand'));
@@ -149,8 +149,8 @@ function page($page=1)
       $list_price=htmlentities($this->input->post('list_price'));
       $sizes=htmlentities($this->input->post('sizes'));
       $date=htmlentities($this->input->post('date'));
-      $description=htmlentities($this->input->post('description'));
-      $this->session->set_flashdata('message', 'Thêm sản phẩm hàng thành công '.$title);
+      $description=htmlentities($this->input->post('description', FALSE));
+      $this->session->set_flashdata('message', 'Thêm sản phẩm hàng thành công'.$title);
           //upload ảnh
        $data="";
      // $data = array();
@@ -194,10 +194,13 @@ function page($page=1)
       $data=rtrim($data, ";");
       //kết thúc upload ảnh
      // echo $data;
+      
     $this->product_model->update($id, $title, $categories,$price,$list_price, $data,$brand, $description, 1,$sizes,1);
       
     //$this->index();
-        echo site_url('admin/product');
+    // site_url('admin/product');
+   // echo htmlentities($description);
+    redirect('admin/product');
 
     }
     function delete($id){

@@ -126,11 +126,11 @@
 			 // filebrowserWindowWidth : '800',
 			 // filebrowserWindowHeight : '480'
 //Dùng cho https://www.responsivefilemanager.com/
-filebrowserBrowseUrl : '<?php echo base_url();?>assets/filemanager/dialog.php?type=2&editor=ckeditor&fldr=',
-filebrowserUploadUrl : '<?php echo base_url();?>assets/filemanager/dialog.php?type=2&editor=ckeditor&fldr=',
-filebrowserImageBrowseUrl : '<?php echo base_url();?>assets/filemanager/dialog.php?type=1&editor=ckeditor&fldr='
-  			
- 			});
+filebrowserBrowseUrl : '<?php echo base_url();?>assets/filemanager/dialog.php?type=2&editor=ckeditor&akey=sonphuongviet&fldr=',
+filebrowserUploadUrl : '<?php echo base_url();?>assets/filemanager/dialog.php?type=2&editor=ckeditor&akey=sonphuongviet&fldr=',
+filebrowserImageBrowseUrl : '<?php echo base_url();?>assets/filemanager/dialog.php?type=1&editor=ckeditor&akey=sonphuongviet&fldr='
+
+});
 		</script>
 		<!-- Examples -->
 		<!-- <script src="<?php echo base_url();?>assets/javascripts/dashboard/examples.dashboard.js"></script> -->

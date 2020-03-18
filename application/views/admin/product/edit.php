@@ -21,9 +21,10 @@
 							<?php
 							$sizes='';
 							 foreach ($item as $key) {
+							 	
 							 	$sizes=$key->sizes;
 							 	?>
-							<form class="form-horizontal form-bordered" method="post" id="form1"  enctype="multipart/form-data" action="<?php echo base_url();?>admin/product/edit_valid">
+							<form class="form-horizontal form-bordered" method="post" id="form123"  enctype="multipart/form-data" action="<?php echo base_url();?>admin/product/edit_valid">
 								<input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>" />
 								<input type="text" class="form-control hidden" name="id" id="id" value="<?=$key->id; ?>">
 											<div class="form-group">
@@ -123,8 +124,8 @@
 
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="description">Mô tả</label>
-												<div class="col-md-6">
-													<textarea class="col-md-12 form-control" name="description" value="<?=$key->description?>"></textarea>
+												<div class="col-md-9">
+													<textarea class="col-md-12 form-control" name="description" value="" id="ckeditor"><?=$key->description?></textarea>
 													
 													
 												</div>
